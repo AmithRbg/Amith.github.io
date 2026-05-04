@@ -48,80 +48,44 @@
         <a href="javascript:history.back()" class="back-link">← Back to Portfolio</a>
         <h1>Restaurant Website Templates</h1>
         
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-header">🍕</div>
-                <div class="project-content">
-                    <h3>Pizza Paradise</h3>
-                    <p>Modern pizza restaurant website with online menu, reservation system, and delivery ordering integration.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/restaurant-demo1')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Pizza Paradise')">Buy</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">🍜</div>
-                <div class="project-content">
-                    <h3>Asian Cuisine Hub</h3>
-                    <p>Elegant Asian restaurant website with gallery, special offers, and table booking system.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/restaurant-demo2')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Asian Cuisine Hub')">Buy</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">🥩</div>
-                <div class="project-content">
-                    <h3>Premium Steakhouse</h3>
-                    <p>Upscale steakhouse website with wine pairing suggestions and private dining reservations.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/restaurant-demo3')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Premium Steakhouse')">Buy</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">🌮</div>
-                <div class="project-content">
-                    <h3>Mexican Fiesta</h3>
-                    <p>Vibrant Mexican restaurant website with colorful design, menu items, and catering options.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/restaurant-demo4')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Mexican Fiesta')">Buy</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">☕</div>
-                <div class="project-content">
-                    <h3>Cafe & Bakery</h3>
-                    <p>Cozy cafe website with product showcase, ordering system, and loyalty program.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/restaurant-demo5')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Cafe & Bakery')">Buy</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">🍱</div>
-                <div class="project-content">
-                    <h3>Fine Dining</h3>
-                    <p>Luxurious fine dining restaurant website with chef profiles and chef's special recommendations.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/restaurant-demo6')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Fine Dining')">Buy</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        const projects = [
+            {
+                icon: '🍕',
+                title: 'Pizza Paradise',
+                description: 'Modern pizza restaurant website with online menu, reservation system, and delivery ordering integration.',
+                price: 600
+            },
+            {
+                icon: '🍜',
+                title: 'Asian Cuisine Hub',
+                description: 'Elegant Asian restaurant website with gallery, special offers, and table booking system.',
+                price: 600
+            },
+            {
+                icon: '🥩',
+                title: 'Premium Steakhouse',
+                description: 'Upscale steakhouse website with wine pairing suggestions and private dining reservations.',
+                price: 600
+            },
+            {
+                icon: '🌮',
+                title: 'Mexican Fiesta',
+                description: 'Vibrant Mexican restaurant website with colorful design, menu items, and catering options.',
+                price: 600
+            },
+            {
+                icon: '☕',
+                title: 'Cafe & Bakery',
+                description: 'Cozy cafe website with product showcase, ordering system, and loyalty program.',
+                price: 600
+            },
+            {
+                icon: '🍱',
+                title: 'Fine Dining',
+                description: 'Luxurious fine dining restaurant website with chef profiles and chef\'s special recommendations.',
+                price: 600
+            }
+        ];         
 
     <div id="buyModal" class="modal">
         <div class="modal-content">
