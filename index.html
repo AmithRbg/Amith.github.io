@@ -1,168 +1,973 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+ <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amith R | Ready-Made Business Websites</title>
+  <title>Professional Portfolio - Amith RBG</title>
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <meta name="description" content="Get modern, ready-to-use websites for your business in 2–3 days. Affordable and professional web solutions by Amith R.">
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
 
-  <link rel="stylesheet" href="style.css">
-</head>
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-<body>
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+        }
 
-<!-- HEADER -->
-<header class="header">
-  <div class="container header-flex">
-    <div class="logo">AMITH.R</div>
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
 
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#templates">Websites</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <h1>Ready-Made Websites for Your Business 🚀</h1>
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            position: relative;
+        }
 
-    <p>
-      Get a professional website for your gym, restaurant, shop or portfolio—  
-      delivered in just 2–3 days.
-    </p>
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            transition: width 0.3s;
+        }
 
-    <a href="#templates" class="main-cta">View Websites</a>
-  </div>
-</section>
+        nav a:hover {
+            color: #60a5fa;
+        }
 
-<!-- FEATURES -->
-<section id="features" class="features">
-  <div class="container">
-    <h2>Why Choose Me?</h2>
+        nav a:hover::after {
+            width: 100%;
+        }
 
-    <div class="features-list">
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            min-height: 100%;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
 
-      <div class="feature-box">
-        <h4>⚡ Fast Delivery</h4>
-        <p>Get your website ready in 2–3 days.</p>
-      </div>
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -300px;
+            right: -300px;
+            animation: float 8s ease-in-out infinite;
+        }
 
-      <div class="feature-box">
-        <h4>📱 Mobile Friendly</h4>
-        <p>Perfect on all devices.</p>
-      </div>
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -200px;
+            left: -200px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
 
-      <div class="feature-box">
-        <h4>🎨 Modern Design</h4>
-        <p>Clean, professional, and user-friendly layouts.</p>
-      </div>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(40px) translateX(20px); }
+        }
 
-      <div class="feature-box">
-        <h4>💰 Affordable Pricing</h4>
-        <p>One-time payment. No hidden costs.</p>
-      </div>
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            animation: slideInUp 1s ease-out;
+        }
 
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.4s;
+            border: 2px solid transparent;
+            cursor: pointer;
+            margin: 0.5rem;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            border: 2px solid #3b82f6;
+            color: #60a5fa;
+        }
+
+        .cta-btn.secondary:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            background: transparent;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(96, 165, 250, 0.04) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            border-radius: 14px;
+            padding: 1.8rem 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            transition: all 0.5s;
+            pointer-events: none;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-6px);
+            border-color: #60a5fa;
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.18);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(96, 165, 250, 0.08) 100%);
+        }
+
+        .skill-category:hover::before {
+            top: -25%;
+            right: -25%;
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .skill-category:nth-child(2) .skill-icon {
+            animation-delay: 0.5s;
+        }
+
+        .skill-category:nth-child(3) .skill-icon {
+            animation-delay: 1s;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            color: #f1f5f9;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-badge {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(96, 165, 250, 0.1) 100%);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            color: #60a5fa;
+            padding: 0.4rem 0.8rem;
+            border-radius: 18px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: default;
+        }
+
+        .skill-badge:hover {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(96, 165, 250, 0.2) 100%);
+            border-color: #60a5fa;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.18);
+        }
+
+        /* Websites Section */
+        .websites {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: transparent;
+        }
+
+        .websites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .website-card {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s;
+            cursor: pointer;
+            animation: bounceIn 0.7s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .website-card:nth-child(2) { animation-delay: 0.15s; }
+        .website-card:nth-child(3) { animation-delay: 0.3s; }
+        .website-card:nth-child(4) { animation-delay: 0.45s; }
+        .website-card:nth-child(5) { animation-delay: 0.6s; }
+
+        .website-preview {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            position: relative;
+        }
+
+        .website-preview::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        .website-details {
+            padding: 2rem;
+        }
+
+        .website-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: #f1f5f9;
+        }
+
+        .website-card p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .website-btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .website-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+        }
+
+        .website-card:hover {
+            transform: translateY(-12px);
+            border-color: #60a5fa;
+            box-shadow: 0 30px 70px rgba(59, 130, 246, 0.2);
+        }
+        .projects {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(96, 165, 250, 0.02) 100%);
+            padding: 6rem 2rem;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* New Cool Animations */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(96, 165, 250, 0.6); }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.95); opacity: 0; }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes titleWave {
+            0%, 100% { transform: translateY(0); }
+            25% { transform: translateY(-10px); }
+            75% { transform: translateY(10px); }
+        }
+
+        .section-title {
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .skill-card {
+            animation: slideInLeft 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .skill-card:nth-child(2) { animation-delay: 0.1s; }
+        .skill-card:nth-child(3) { animation-delay: 0.2s; }
+        .skill-card:nth-child(4) { animation-delay: 0.3s; }
+        .skill-card:nth-child(5) { animation-delay: 0.4s; }
+        .skill-card:nth-child(6) { animation-delay: 0.5s; }
+
+        .project-card {
+            animation: bounceIn 0.7s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .project-card:nth-child(2) { animation-delay: 0.15s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.45s; }
+        .project-card:nth-child(5) { animation-delay: 0.6s; }
+        .project-card:nth-child(6) { animation-delay: 0.75s; }
+
+        .stat-card {
+            animation: slideInRight 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .stat-card:nth-child(2) { animation-delay: 0.1s; }
+        .stat-card:nth-child(3) { animation-delay: 0.2s; }
+        .stat-card:nth-child(4) { animation-delay: 0.3s; }
+
+        .cta-btn {
+            animation: bounceIn 1s ease-out;
+        }
+
+        .contact-link {
+            animation: pulseGlow 2s ease-in-out infinite;
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            animation: none;
+        }
+
+        .skill-card:hover {
+            animation: titleWave 0.6s ease-in-out;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #f1f5f9;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px);
+            border-color: #60a5fa;
+            box-shadow: 0 30px 70px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(96, 165, 250, 0.05) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: #60a5fa;
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(96, 165, 250, 0.02) 100%);
+            padding: 6rem 2rem;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content {
+            margin-bottom: 3rem;
+        }
+
+        .contact-content p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(96, 165, 250, 0.05) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            color: #60a5fa;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .contact-link:hover {
+            border-color: #60a5fa;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            padding: 2.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            color: #64748b;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-btn {
+                padding: 0.8rem 1.8rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+ </head>
+ <body><!-- Navigation -->
+  <nav>
+   <div class="logo">
+    AMITH
+   </div>
+   <ul>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#websites">Websites</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+   </ul>
+  </nav><!-- Hero Section -->
+  <section class="hero">
+   <div class="hero-content">
+    <h1>Hi, I'm <span>Amith</span></h1>
+    <p>Full-Stack Developer crafting beautiful digital experiences. Specialized in modern web technologies and UI/UX design.</p>
+    <div><button class="cta-btn">View My Work</button>
     </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="about">
-  <div class="container">
-    <h2>How It Works</h2>
-
-    <p>1. Choose a website template</p>
-    <p>2. Send your business details</p>
-    <p>3. I customize it for you</p>
-    <p>4. Your website goes live in 2–3 days 🚀</p>
-  </div>
-</section>
-
-<!-- TEMPLATES -->
-<section id="templates" class="templates">
-  <div class="container">
-    <h2>Ready Website Designs</h2>
-
-    <div class="templates-list">
-
-      <div class="template-card">
-        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?fit=crop&w=400&q=80">
-        <h3>Gym Website</h3>
-        <p>Perfect for fitness trainers & gyms</p>
-        <span class="price">₹1499</span>
+   </div>
+  </section><!-- Skills Section -->
+  <section class="skills" id="skills">
+   <h2 class="section-title">My <span>Skills</span></h2>
+   <div class="skills-grid">
+    <div class="skill-category">
+     <div class="skill-header">
+      <div class="skill-icon">
+       💻
       </div>
-
-      <div class="template-card">
-        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef5e?fit=crop&w=400&q=80">
-        <h3>Restaurant Website</h3>
-        <p>For cafes & restaurants</p>
-        <span class="price">₹1799</span>
-      </div>
-
-      <div class="template-card">
-        <img src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?fit=crop&w=400&q=80">
-        <h3>Portfolio Website</h3>
-        <p>For freelancers & developers</p>
-        <span class="price">₹999</span>
-      </div>
-
+      <h3>Frontend</h3>
+     </div>
+     <div class="skills-list">
+      <span class="skill-badge">React</span> <span class="skill-badge">Vue.js</span> <span class="skill-badge">HTML5</span> <span class="skill-badge">CSS3</span> <span class="skill-badge">JavaScript</span> <span class="skill-badge">Tailwind</span>
+     </div>
     </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing" class="pricing">
-  <div class="container">
-    <h2>Pricing Plans</h2>
-
-    <div class="pricing-list">
-
-      <div class="pricing-plan">
-        <h4>Basic Website</h4>
-        <p>₹999</p>
-        <p>Ready template setup</p>
+    <div class="skill-category">
+     <div class="skill-header">
+      <div class="skill-icon">
+       ⚙️
       </div>
-
-      <div class="pricing-plan">
-        <h4>Full Setup</h4>
-        <p>₹1999</p>
-        <p>Website + customization</p>
-      </div>
-
-      <div class="pricing-plan">
-        <h4>Custom Website</h4>
-        <p>₹2999+</p>
-        <p>Fully custom design</p>
-      </div>
-
+      <h3>Backend</h3>
+     </div>
+     <div class="skills-list">
+      <span class="skill-badge">Node.js</span> <span class="skill-badge">Python</span> <span class="skill-badge">Express</span> <span class="skill-badge">MongoDB</span> <span class="skill-badge">PostgreSQL</span> <span class="skill-badge">Firebase</span>
+     </div>
     </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <div class="container">
-    <h2>Contact Me</h2>
-
-    <p>Want a website? Email me directly:</p>
-
-    <a href="mailto:amithboss555@gmail.com?subject=Website%20Enquiry" class="main-cta">
-      Get Website Quote
-    </a>
-
-    <p>Email: amithboss555@gmail.com</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Amith R | Website Services</p>
-</footer>
-
-</body>
+    <div class="skill-category">
+     <div class="skill-header">
+      <div class="skill-icon">
+       🎨
+      </div>
+      <h3>Design &amp; DevOps</h3>
+     </div>
+     <div class="skills-list">
+      <span class="skill-badge">Figma</span> <span class="skill-badge">UI/UX</span> <span class="skill-badge">Docker</span> <span class="skill-badge">AWS</span> <span class="skill-badge">CI/CD</span> <span class="skill-badge">Git</span>
+     </div>
+    </div>
+   </div>
+  </section><!-- Websites Section -->
+  <section class="websites" id="websites">
+   <h2 class="section-title">Ready to Use <span>Websites</span></h2>
+   <div class="websites-grid">
+    <div class="website-card">
+     <div class="website-preview">
+      🏢
+     </div>
+     <div class="website-details">
+      <h3>Corporate Website</h3>
+      <p>Professional business website with team showcase and service listings.</p><a href="#" class="website-btn">View Website →</a>
+     </div>
+    </div>
+    <div class="website-card">
+     <div class="website-preview">
+      🍕
+     </div>
+     <div class="website-details">
+      <h3>Restaurant Website</h3>
+      <p>Beautiful food business site with menu, reservations, and online ordering.</p><a href="#" class="website-btn">View Website →</a>
+     </div>
+    </div>
+    <div class="website-card">
+     <div class="website-preview">
+      💼
+     </div>
+     <div class="website-details">
+      <h3>Consulting Agency</h3>
+      <p>Modern consulting firm website with case studies and client testimonials.</p><a href="#" class="website-btn">View Website →</a>
+     </div>
+    </div>
+    <div class="website-card">
+     <div class="website-preview">
+      🏥
+     </div>
+     <div class="website-details">
+      <h3>Healthcare Clinic</h3>
+      <p>Medical practice website with appointment booking and patient resources.</p><a href="#" class="website-btn">View Website →</a>
+     </div>
+    </div>
+    <div class="website-card">
+     <div class="website-preview">
+      📚
+     </div>
+     <div class="website-details">
+      <h3>Online Courses</h3>
+      <p>Educational platform for online learning and skill development courses.</p><a href="#" class="website-btn">View Website →</a>
+     </div>
+    </div>
+   </div>
+  </section><!-- Stats Section -->
+  <section class="stats">
+   <div class="stats-grid">
+    <div class="stat-card">
+     <div class="stat-number">
+      50+
+     </div>
+     <div class="stat-label">
+      Projects Completed
+     </div>
+    </div>
+    <div class="stat-card">
+     <div class="stat-number">
+      30+
+     </div>
+     <div class="stat-label">
+      Happy Clients
+     </div>
+    </div>
+    <div class="stat-card">
+     <div class="stat-number">
+      5+
+     </div>
+     <div class="stat-label">
+      Years Experience
+     </div>
+    </div>
+    <div class="stat-card">
+     <div class="stat-number">
+      10+
+     </div>
+     <div class="stat-label">
+      Tech Stack
+     </div>
+    </div>
+   </div>
+  </section><!-- Projects Section -->
+  <section class="projects" id="projects">
+   <div class="projects-container">
+    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <div class="projects-grid">
+     <div class="project-card">
+      <div class="project-image">
+       📊
+      </div>
+      <div class="project-content">
+       <h3>Analytics Dashboard</h3>
+       <p>Real-time data visualization platform with interactive charts and insights.</p>
+       <div class="project-tags"><span class="tag">React</span> <span class="tag">Chart.js</span> <span class="tag">APIs</span>
+       </div>
+      </div>
+     </div>
+     <div class="project-card">
+      <div class="project-image">
+       🛍️
+      </div>
+      <div class="project-content">
+       <h3>E-Commerce Platform</h3>
+       <p>Full-stack e-commerce solution with payment integration and inventory management.</p>
+       <div class="project-tags"><span class="tag">MERN</span> <span class="tag">Stripe</span> <span class="tag">MongoDB</span>
+       </div>
+      </div>
+     </div>
+     <div class="project-card">
+      <div class="project-image">
+       ✍️
+      </div>
+      <div class="project-content">
+       <h3>Blog Platform</h3>
+       <p>Content management system with markdown support and social sharing.</p>
+       <div class="project-tags"><span class="tag">Next.js</span> <span class="tag">Firebase</span> <span class="tag">Markdown</span>
+       </div>
+      </div>
+     </div>
+     <div class="project-card">
+      <div class="project-image">
+       💬
+      </div>
+      <div class="project-content">
+       <h3>Chat Application</h3>
+       <p>Real-time messaging app with user authentication and file sharing.</p>
+       <div class="project-tags"><span class="tag">WebSocket</span> <span class="tag">Node.js</span> <span class="tag">Socket.io</span>
+       </div>
+      </div>
+     </div>
+     <div class="project-card">
+      <div class="project-image">
+       🎓
+      </div>
+      <div class="project-content">
+       <h3>Learning Platform</h3>
+       <p>Educational platform with course management and progress tracking.</p>
+       <div class="project-tags"><span class="tag">Vue.js</span> <span class="tag">PostgreSQL</span> <span class="tag">Video</span>
+       </div>
+      </div>
+     </div>
+     <div class="project-card">
+      <div class="project-image">
+       🌍
+      </div>
+      <div class="project-content">
+       <h3>Travel Guide App</h3>
+       <p>Mobile-first travel planner with maps and recommendations.</p>
+       <div class="project-tags"><span class="tag">React Native</span> <span class="tag">Google Maps</span> <span class="tag">Firebase</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Contact Section -->
+  <section class="contact" id="contact">
+   <div class="contact-container">
+    <h2 class="section-title">Let's <span>Connect</span></h2>
+    <div class="contact-content">
+     <p>I'm always open to new opportunities and interesting projects. Let's build something amazing together!</p>
+    </div>
+    <div class="contact-links"><a href="mailto:amith@example.com" class="contact-link">📧 Email Me</a>
+    </div>
+   </div>
+  </section><!-- Footer -->
+  <footer>
+   <p>© 2024 Amith RBG. All rights reserved.</p>
+   <p>Crafted with ❤️ using modern web technologies</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script>
+        lucide.createIcons();
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f652c53a07ca90e',t:'MTc3Nzg3MzI1Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
