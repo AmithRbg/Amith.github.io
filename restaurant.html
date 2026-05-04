@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Websites - Amith</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); color: #e2e8f0; padding: 2rem; }
+        .watermark { position: fixed; bottom: 20px; right: 20px; background: rgba(59, 130, 246, 0.9); padding: 1rem 2rem; border-radius: 8px; font-weight: 700; z-index: 1000; pointer-events: none; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 0.8; } 50% { opacity: 1; } }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { text-align: center; margin-bottom: 3rem; color: #60a5fa; font-size: 2.5rem; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .project-card { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; overflow: hidden; transition: all 0.3s; }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2); }
+        .project-header { background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%); padding: 2rem; text-align: center; font-size: 3rem; }
+        .project-content { padding: 2rem; }
+        .project-content h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #f1f5f9; }
+        .project-content p { color: #cbd5e1; margin-bottom: 1.5rem; line-height: 1.6; }
+        .button-group { display: flex; gap: 1rem; }
+        .btn { flex: 1; padding: 0.8rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s; text-align: center; }
+        .btn-preview { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; }
+        .btn-preview:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3); }
+        .btn-buy { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #60a5fa; }
+        .btn-buy:hover { background: rgba(59, 130, 246, 0.3); transform: translateY(-2px); }
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); }
+        .modal-content { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); margin: 10% auto; padding: 2rem; border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; max-width: 500px; text-align: center; animation: slideDown 0.3s; }
+        @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .close { color: #94a3b8; float: right; font-size: 2rem; font-weight: bold; cursor: pointer; }
+        .close:hover { color: #60a5fa; }
+        .modal h2 { color: #60a5fa; margin: 1rem 0; }
+        .modal p { color: #cbd5e1; margin-bottom: 1rem; }
+        .price-box { background: rgba(59, 130, 246, 0.2); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border: 1px solid #60a5fa; }
+        .price { font-size: 2rem; font-weight: 800; color: #60a5fa; margin-bottom: 1rem; }
+        .email-box { background: rgba(59, 130, 246, 0.15); padding: 1rem; border-radius: 8px; margin: 1rem 0; word-break: break-all; }
+        .email-label { color: #94a3b8; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .email-text { color: #60a5fa; font-weight: 600; font-size: 1.1rem; }
+        .close-btn { padding: 0.8rem 2rem; background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #60a5fa; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
+        .close-btn:hover { background: rgba(59, 130, 246, 0.3); }
+        .back-link { display: inline-block; margin-bottom: 2rem; color: #60a5fa; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .back-link:hover { color: #3b82f6; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="watermark">Demo by Amith</div>
+    <div class="container">
+        <a href="javascript:history.back()" class="back-link">← Back to Portfolio</a>
+        <h1>Restaurant Website Templates</h1>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">🍕</div>
+                <div class="project-content">
+                    <h3>Pizza Paradise</h3>
+                    <p>Modern pizza restaurant website with online menu, reservation system, and delivery ordering integration.</p>
+                    <div class="button-group">
+                        <button class="btn btn-preview" onclick="openPreview('https://example.com/restaurant-demo1')">Preview</button>
+                        <button class="btn btn-buy" onclick="showBuyModal('Pizza Paradise')">Buy</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">🍜</div>
+                <div class="project-content">
+                    <h3>Asian Cuisine Hub</h3>
+                    <p>Elegant Asian restaurant website with gallery, special offers, and table booking system.</p>
+                    <div class="button-group">
+                        <button class="btn btn-preview" onclick="openPreview('https://example.com/restaurant-demo2')">Preview</button>
+                        <button class="btn btn-buy" onclick="showBuyModal('Asian Cuisine Hub')">Buy</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">🥩</div>
+                <div class="project-content">
+                    <h3>Premium Steakhouse</h3>
+                    <p>Upscale steakhouse website with wine pairing suggestions and private dining reservations.</p>
+                    <div class="button-group">
+                        <button class="btn btn-preview" onclick="openPreview('https://example.com/restaurant-demo3')">Preview</button>
+                        <button class="btn btn-buy" onclick="showBuyModal('Premium Steakhouse')">Buy</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">🌮</div>
+                <div class="project-content">
+                    <h3>Mexican Fiesta</h3>
+                    <p>Vibrant Mexican restaurant website with colorful design, menu items, and catering options.</p>
+                    <div class="button-group">
+                        <button class="btn btn-preview" onclick="openPreview('https://example.com/restaurant-demo4')">Preview</button>
+                        <button class="btn btn-buy" onclick="showBuyModal('Mexican Fiesta')">Buy</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">☕</div>
+                <div class="project-content">
+                    <h3>Cafe & Bakery</h3>
+                    <p>Cozy cafe website with product showcase, ordering system, and loyalty program.</p>
+                    <div class="button-group">
+                        <button class="btn btn-preview" onclick="openPreview('https://example.com/restaurant-demo5')">Preview</button>
+                        <button class="btn btn-buy" onclick="showBuyModal('Cafe & Bakery')">Buy</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">🍱</div>
+                <div class="project-content">
+                    <h3>Fine Dining</h3>
+                    <p>Luxurious fine dining restaurant website with chef profiles and chef's special recommendations.</p>
+                    <div class="button-group">
+                        <button class="btn btn-preview" onclick="openPreview('https://example.com/restaurant-demo6')">Preview</button>
+                        <button class="btn btn-buy" onclick="showBuyModal('Fine Dining')">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="buyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBuyModal()">&times;</span>
+            <h2 id="modalTitle">Product Name</h2>
+            <div class="price-box">
+                <div class="price">₹600</div>
+                <p>One-time payment for lifetime use</p>
+            </div>
+            <p>To purchase this template, please contact:</p>
+            <div class="email-box">
+                <div class="email-label">Email:</div>
+                <div class="email-text">amithboss555@gmail.com</div>
+            </div>
+            <p style="color: #94a3b8; font-size: 0.9rem; margin-top: 1rem;">After purchase, you'll receive the complete source code and full support.</p>
+            <button class="close-btn" onclick="closeBuyModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert('Right-click is disabled on this demo page.'); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) { e.preventDefault(); alert('Developer tools are disabled on this demo page.'); } });
+        const buyModal = document.getElementById('buyModal');
+        function showBuyModal(productName) { document.getElementById('modalTitle').textContent = productName; buyModal.style.display = 'block'; }
+        function closeBuyModal() { buyModal.style.display = 'none'; }
+        window.onclick = function(event) { if (event.target == buyModal) { buyModal.style.display = 'none'; } }
+        function openPreview(url) { alert('Opening preview in new tab...\n\nNote: Replace the URL with your actual preview link.'); window.open(url, '_blank'); }
+    </script>
+</body>
+</html>
