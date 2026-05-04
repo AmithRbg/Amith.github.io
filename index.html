@@ -24,7 +24,6 @@
             overflow-x: hidden;
         }
 
-        /* LOADING SCREEN */
         #loadingScreen {
             position: fixed;
             width: 100%;
@@ -58,7 +57,6 @@
             font-weight: 600;
         }
 
-        /* EMAIL MODAL */
         #emailModal {
             display: none;
             position: fixed;
@@ -144,7 +142,6 @@
             box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -203,7 +200,6 @@
             width: 100%;
         }
 
-        /* Hero Section */
         .hero {
             margin-top: 70px;
             min-height: 100%;
@@ -308,7 +304,6 @@
             background: rgba(59, 130, 246, 0.1);
         }
 
-        /* Skills Section */
         .skills {
             padding: 4rem 2rem;
             max-width: 1100px;
@@ -430,7 +425,6 @@
             box-shadow: 0 4px 12px rgba(96, 165, 250, 0.18);
         }
 
-        /* Websites Section */
         .websites {
             padding: 6rem 2rem;
             max-width: 1200px;
@@ -624,7 +618,6 @@
             box-shadow: 0 30px 70px rgba(59, 130, 246, 0.2);
         }
 
-        /* Stats Section */
         .stats {
             padding: 4rem 2rem;
             max-width: 1200px;
@@ -666,7 +659,6 @@
             font-size: 0.95rem;
         }
 
-        /* Contact Section */
         .contact {
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(96, 165, 250, 0.02) 100%);
             padding: 6rem 2rem;
@@ -716,7 +708,6 @@
             transform: translateY(-3px);
         }
 
-        /* Footer */
         footer {
             background: #0f172a;
             padding: 2.5rem;
@@ -729,7 +720,6 @@
             margin: 0.5rem 0;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
@@ -767,13 +757,11 @@
  </head>
  <body>
 
- <!-- LOADING SCREEN -->
  <div id="loadingScreen">
    <div class="loader"></div>
    <div class="loading-text">Loading Your Portfolio...</div>
  </div>
 
- <!-- EMAIL MODAL -->
  <div id="emailModal" class="modal">
    <div class="modal-content">
      <span class="close" onclick="closeEmailModal()">&times;</span>
@@ -784,7 +772,6 @@
    </div>
  </div>
 
- <!-- Navigation -->
   <nav>
    <div class="logo">
     AMITH
@@ -797,7 +784,6 @@
    </ul>
   </nav>
 
- <!-- Hero Section -->
   <section class="hero">
    <div class="hero-content">
     <h1>Hi, I'm <span>Amith</span></h1>
@@ -807,7 +793,6 @@
    </div>
   </section>
 
- <!-- Skills Section -->
   <section class="skills" id="skills">
    <h2 class="section-title">My <span>Skills</span></h2>
    <div class="skills-grid">
@@ -847,7 +832,6 @@
    </div>
   </section>
 
- <!-- Websites Section (CHANGED: View My Work scrolls HERE) -->
   <section class="websites" id="websites">
    <h2 class="section-title">Ready to Use <span>Websites</span></h2>
    <div class="websites-grid">
@@ -899,7 +883,6 @@
    </div>
   </section>
 
- <!-- Stats Section -->
   <section class="stats">
    <div class="stats-grid">
     <div class="stat-card">
@@ -937,7 +920,6 @@
    </div>
   </section>
 
- <!-- Projects Section -->
   <section class="projects" id="projects">
    <div class="projects-container">
     <h2 class="section-title">Featured <span>Projects</span></h2>
@@ -1012,7 +994,6 @@
    </div>
   </section>
 
- <!-- Contact Section -->
   <section class="contact" id="contact">
    <div class="contact-container">
     <h2 class="section-title">Let's <span>Connect</span></h2>
@@ -1024,31 +1005,26 @@
    </div>
   </section>
 
- <!-- Footer -->
   <footer>
    <p>© 2024 Amith RBG. All rights reserved.</p>
    <p>Crafted with ❤️ using modern web technologies</p>
   </footer>
 
   <script>
-    // ===== LOADING SCREEN - HIDE AFTER 1.5 SECONDS =====
     window.addEventListener('load', function() {
       setTimeout(() => {
         document.getElementById('loadingScreen').style.display = 'none';
       }, 1500);
     });
 
-    // ===== VIEW MY WORK - SCROLL TO WEBSITES SECTION (NOT PROJECTS) =====
     document.getElementById('viewWorkBtn').addEventListener('click', function() {
       document.getElementById('websites').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // ===== OPEN CATEGORY PAGES IN NEW TAB =====
     function openCategory(page) {
       window.open(page, '_blank');
     }
 
-    // ===== EMAIL MODAL FUNCTIONS =====
     const emailModal = document.getElementById('emailModal');
 
     function openEmailModal() {
@@ -1067,7 +1043,6 @@
       }
     }
 
-    // ===== COPY EMAIL TO CLIPBOARD =====
     function copyEmail() {
       const email = 'amithboss555@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
