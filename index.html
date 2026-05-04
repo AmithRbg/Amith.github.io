@@ -24,6 +24,126 @@
             overflow-x: hidden;
         }
 
+        /* LOADING SCREEN */
+        #loadingScreen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .loader {
+            border: 8px solid rgba(59, 130, 246, 0.1);
+            border-top: 8px solid #3b82f6;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: #60a5fa;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* EMAIL MODAL */
+        #emailModal {
+            display: none;
+            position: fixed;
+            z-index: 1500;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            margin: 10% auto;
+            padding: 2rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            animation: slideInUp 0.3s;
+            color: #e2e8f0;
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-content h2 {
+            margin-bottom: 1rem;
+            color: #60a5fa;
+        }
+
+        .modal-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+
+        .modal-email {
+            background: rgba(59, 130, 246, 0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            word-break: break-all;
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .close {
+            color: #94a3b8;
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .close:hover {
+            color: #60a5fa;
+        }
+
+        .copy-btn {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
         /* Navigation */
         nav {
             position: fixed;
@@ -416,6 +536,7 @@
             border-color: #60a5fa;
             box-shadow: 0 30px 70px rgba(59, 130, 246, 0.2);
         }
+
         .projects {
             background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(96, 165, 250, 0.02) 100%);
             padding: 6rem 2rem;
@@ -470,90 +591,10 @@
             100% { transform: translateX(100%); }
         }
 
-        /* New Cool Animations */
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
-            50% { box-shadow: 0 0 40px rgba(96, 165, 250, 0.6); }
-        }
-
         @keyframes bounceIn {
             0% { transform: scale(0.95); opacity: 0; }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); opacity: 1; }
-        }
-
-        @keyframes slideInLeft {
-            from { transform: translateX(-50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-
-        @keyframes slideInRight {
-            from { transform: translateX(50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-
-        @keyframes titleWave {
-            0%, 100% { transform: translateY(0); }
-            25% { transform: translateY(-10px); }
-            75% { transform: translateY(10px); }
-        }
-
-        .section-title {
-            animation: slideInUp 0.8s ease-out;
-        }
-
-        .skill-card {
-            animation: slideInLeft 0.6s ease-out;
-            animation-fill-mode: both;
-        }
-
-        .skill-card:nth-child(2) { animation-delay: 0.1s; }
-        .skill-card:nth-child(3) { animation-delay: 0.2s; }
-        .skill-card:nth-child(4) { animation-delay: 0.3s; }
-        .skill-card:nth-child(5) { animation-delay: 0.4s; }
-        .skill-card:nth-child(6) { animation-delay: 0.5s; }
-
-        .project-card {
-            animation: bounceIn 0.7s ease-out;
-            animation-fill-mode: both;
-        }
-
-        .project-card:nth-child(2) { animation-delay: 0.15s; }
-        .project-card:nth-child(3) { animation-delay: 0.3s; }
-        .project-card:nth-child(4) { animation-delay: 0.45s; }
-        .project-card:nth-child(5) { animation-delay: 0.6s; }
-        .project-card:nth-child(6) { animation-delay: 0.75s; }
-
-        .stat-card {
-            animation: slideInRight 0.6s ease-out;
-            animation-fill-mode: both;
-        }
-
-        .stat-card:nth-child(2) { animation-delay: 0.1s; }
-        .stat-card:nth-child(3) { animation-delay: 0.2s; }
-        .stat-card:nth-child(4) { animation-delay: 0.3s; }
-
-        .cta-btn {
-            animation: bounceIn 1s ease-out;
-        }
-
-        .contact-link {
-            animation: pulseGlow 2s ease-in-out infinite;
-            transition: all 0.3s;
-        }
-
-        .contact-link:hover {
-            animation: none;
-        }
-
-        .skill-card:hover {
-            animation: titleWave 0.6s ease-in-out;
         }
 
         .project-content {
@@ -677,6 +718,7 @@
             text-decoration: none;
             transition: all 0.3s;
             font-weight: 600;
+            cursor: pointer;
         }
 
         .contact-link:hover {
@@ -727,14 +769,33 @@
                 padding: 0.8rem 1.8rem;
                 font-size: 0.9rem;
             }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
-  <style>body { box-sizing: border-box; }</style>
-  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
  </head>
- <body><!-- Navigation -->
+ <body>
+
+ <!-- LOADING SCREEN -->
+ <div id="loadingScreen">
+   <div class="loader"></div>
+   <div class="loading-text">Loading Your Portfolio...</div>
+ </div>
+
+ <!-- EMAIL MODAL -->
+ <div id="emailModal" class="modal">
+   <div class="modal-content">
+     <span class="close" onclick="closeEmailModal()">&times;</span>
+     <h2>Contact Me</h2>
+     <p>Send email to:</p>
+     <div class="modal-email">amithboss555@gmail.com</div>
+     <button class="copy-btn" onclick="copyEmail()">Copy Email</button>
+   </div>
+ </div>
+
+ <!-- Navigation -->
   <nav>
    <div class="logo">
     AMITH
@@ -745,15 +806,19 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
    </ul>
-  </nav><!-- Hero Section -->
+  </nav>
+
+ <!-- Hero Section -->
   <section class="hero">
    <div class="hero-content">
     <h1>Hi, I'm <span>Amith</span></h1>
     <p>Full-Stack Developer crafting beautiful digital experiences. Specialized in modern web technologies and UI/UX design.</p>
-    <div><button class="cta-btn">View My Work</button>
+    <div><button class="cta-btn" id="viewWorkBtn">View My Work</button>
     </div>
    </div>
-  </section><!-- Skills Section -->
+  </section>
+
+ <!-- Skills Section -->
   <section class="skills" id="skills">
    <h2 class="section-title">My <span>Skills</span></h2>
    <div class="skills-grid">
@@ -791,7 +856,9 @@
      </div>
     </div>
    </div>
-  </section><!-- Websites Section -->
+  </section>
+
+ <!-- Websites Section -->
   <section class="websites" id="websites">
    <h2 class="section-title">Ready to Use <span>Websites</span></h2>
    <div class="websites-grid">
@@ -801,7 +868,7 @@
      </div>
      <div class="website-details">
       <h3>Corporate Website</h3>
-      <p>Professional business website with team showcase and service listings.</p><a href="#" class="website-btn">View Website →</a>
+      <p>Professional business website with team showcase and service listings.</p><button class="website-btn" onclick="openCategory('corporate.html')">View Website →</button>
      </div>
     </div>
     <div class="website-card">
@@ -810,7 +877,7 @@
      </div>
      <div class="website-details">
       <h3>Restaurant Website</h3>
-      <p>Beautiful food business site with menu, reservations, and online ordering.</p><a href="#" class="website-btn">View Website →</a>
+      <p>Beautiful food business site with menu, reservations, and online ordering.</p><button class="website-btn" onclick="openCategory('restaurant.html')">View Website →</button>
      </div>
     </div>
     <div class="website-card">
@@ -819,7 +886,7 @@
      </div>
      <div class="website-details">
       <h3>Consulting Agency</h3>
-      <p>Modern consulting firm website with case studies and client testimonials.</p><a href="#" class="website-btn">View Website →</a>
+      <p>Modern consulting firm website with case studies and client testimonials.</p><button class="website-btn" onclick="openCategory('consulting.html')">View Website →</button>
      </div>
     </div>
     <div class="website-card">
@@ -828,7 +895,7 @@
      </div>
      <div class="website-details">
       <h3>Healthcare Clinic</h3>
-      <p>Medical practice website with appointment booking and patient resources.</p><a href="#" class="website-btn">View Website →</a>
+      <p>Medical practice website with appointment booking and patient resources.</p><button class="website-btn" onclick="openCategory('healthcare.html')">View Website →</button>
      </div>
     </div>
     <div class="website-card">
@@ -837,11 +904,13 @@
      </div>
      <div class="website-details">
       <h3>Online Courses</h3>
-      <p>Educational platform for online learning and skill development courses.</p><a href="#" class="website-btn">View Website →</a>
+      <p>Educational platform for online learning and skill development courses.</p><button class="website-btn" onclick="openCategory('courses.html')">View Website →</button>
      </div>
     </div>
    </div>
-  </section><!-- Stats Section -->
+  </section>
+
+ <!-- Stats Section -->
   <section class="stats">
    <div class="stats-grid">
     <div class="stat-card">
@@ -877,7 +946,9 @@
      </div>
     </div>
    </div>
-  </section><!-- Projects Section -->
+  </section>
+
+ <!-- Projects Section -->
   <section class="projects" id="projects">
    <div class="projects-container">
     <h2 class="section-title">Featured <span>Projects</span></h2>
@@ -950,24 +1021,73 @@
      </div>
     </div>
    </div>
-  </section><!-- Contact Section -->
+  </section>
+
+ <!-- Contact Section -->
   <section class="contact" id="contact">
    <div class="contact-container">
     <h2 class="section-title">Let's <span>Connect</span></h2>
     <div class="contact-content">
      <p>I'm always open to new opportunities and interesting projects. Let's build something amazing together!</p>
     </div>
-    <div class="contact-links"><a href="mailto:amith@example.com" class="contact-link">📧 Email Me</a>
+    <div class="contact-links"><button class="contact-link" onclick="openEmailModal()">📧 Email Me</button>
     </div>
    </div>
-  </section><!-- Footer -->
+  </section>
+
+ <!-- Footer -->
   <footer>
    <p>© 2024 Amith RBG. All rights reserved.</p>
    <p>Crafted with ❤️ using modern web technologies</p>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
   <script>
-        lucide.createIcons();
-    </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f652c53a07ca90e',t:'MTc3Nzg3MzI1Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    // ===== LOADING SCREEN - HIDE AFTER 1.5 SECONDS =====
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        document.getElementById('loadingScreen').style.display = 'none';
+      }, 1500);
+    });
+
+    // ===== VIEW MY WORK - SCROLL TO PROJECTS SECTION =====
+    document.getElementById('viewWorkBtn').addEventListener('click', function() {
+      document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // ===== OPEN CATEGORY PAGES IN NEW TAB =====
+    function openCategory(page) {
+      window.open(page, '_blank');
+    }
+
+    // ===== EMAIL MODAL FUNCTIONS =====
+    const emailModal = document.getElementById('emailModal');
+
+    function openEmailModal() {
+      emailModal.style.display = 'block';
+    }
+
+    function closeEmailModal() {
+      emailModal.style.display = 'none';
+    }
+
+    document.querySelector('.close').onclick = closeEmailModal;
+
+    window.onclick = function(event) {
+      if (event.target == emailModal) {
+        emailModal.style.display = 'none';
+      }
+    }
+
+    // ===== COPY EMAIL TO CLIPBOARD =====
+    function copyEmail() {
+      const email = 'amithboss555@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        alert('Email copied to clipboard! ✅');
+      }).catch(err => {
+        console.log('Failed to copy:', err);
+      });
+    }
+  </script>
+
+ </body>
 </html>
