@@ -253,17 +253,6 @@
             animation: slideInUp 1s ease-out;
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         .hero h1 {
             font-size: 4.5rem;
             font-weight: 900;
@@ -858,7 +847,7 @@
    </div>
   </section>
 
- <!-- Websites Section -->
+ <!-- Websites Section (CHANGED: View My Work scrolls HERE) -->
   <section class="websites" id="websites">
    <h2 class="section-title">Ready to Use <span>Websites</span></h2>
    <div class="websites-grid">
@@ -1049,9 +1038,9 @@
       }, 1500);
     });
 
-    // ===== VIEW MY WORK - SCROLL TO PROJECTS SECTION =====
+    // ===== VIEW MY WORK - SCROLL TO WEBSITES SECTION (NOT PROJECTS) =====
     document.getElementById('viewWorkBtn').addEventListener('click', function() {
-      document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('websites').scrollIntoView({ behavior: 'smooth' });
     });
 
     // ===== OPEN CATEGORY PAGES IN NEW TAB =====
