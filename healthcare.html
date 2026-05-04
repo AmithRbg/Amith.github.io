@@ -24,125 +24,137 @@
         .btn-preview:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3); }
         .btn-buy { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #60a5fa; }
         .btn-buy:hover { background: rgba(59, 130, 246, 0.3); transform: translateY(-2px); }
+
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); }
-        .modal-content { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); margin: 10% auto; padding: 2rem; border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; max-width: 500px; text-align: center; animation: slideDown 0.3s; }
-        @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .close { color: #94a3b8; float: right; font-size: 2rem; font-weight: bold; cursor: pointer; }
-        .close:hover { color: #60a5fa; }
-        .modal h2 { color: #60a5fa; margin: 1rem 0; }
-        .modal p { color: #cbd5e1; margin-bottom: 1rem; }
-        .price-box { background: rgba(59, 130, 246, 0.2); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border: 1px solid #60a5fa; }
-        .price { font-size: 2rem; font-weight: 800; color: #60a5fa; margin-bottom: 1rem; }
-        .email-box { background: rgba(59, 130, 246, 0.15); padding: 1rem; border-radius: 8px; margin: 1rem 0; word-break: break-all; }
-        .email-label { color: #94a3b8; font-size: 0.9rem; margin-bottom: 0.5rem; }
-        .email-text { color: #60a5fa; font-weight: 600; font-size: 1.1rem; }
-        .close-btn { padding: 0.8rem 2rem; background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #60a5fa; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
-        .close-btn:hover { background: rgba(59, 130, 246, 0.3); }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: #60a5fa; text-decoration: none; font-weight: 600; transition: all 0.3s; }
-        .back-link:hover { color: #3b82f6; text-decoration: underline; }
+        .modal-content { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); margin: 10% auto; padding: 2rem; border-radius: 12px; max-width: 500px; text-align: center; }
+        .close { float: right; font-size: 2rem; cursor: pointer; }
+        .price-box { margin: 1rem 0; }
+        .price { font-size: 2rem; color: #60a5fa; }
+
+        .back-link { display: inline-block; margin-bottom: 2rem; color: #60a5fa; text-decoration: none; font-weight: 600; }
     </style>
 </head>
 <body>
-    <div class="watermark">Demo by Amith</div>
-    <div class="container">
-        <a href="javascript:history.back()" class="back-link">← Back to Portfolio</a>
-        <h1>Healthcare Website Templates</h1>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-header">🏥</div>
-                <div class="project-content">
-                    <h3>General Hospital</h3>
-                    <p>Comprehensive hospital website with departments, doctors, appointment booking, and patient resources.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/healthcare-demo1')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('General Hospital')">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header">👨‍⚕️</div>
-                <div class="project-content">
-                    <h3>Clinic & Diagnostics</h3>
-                    <p>Clinic website with doctor profiles, diagnostic services, and online consultation booking.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/healthcare-demo2')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Clinic & Diagnostics')">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header">🦷</div>
-                <div class="project-content">
-                    <h3>Dental Practice</h3>
-                    <p>Dental clinic website with services, procedures, before/after gallery, and appointment system.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/healthcare-demo3')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Dental Practice')">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header">👁️</div>
-                <div class="project-content">
-                    <h3>Eye Care Center</h3>
-                    <p>Ophthalmology center website with eye care services, doctor information, and patient testimonials.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/healthcare-demo4')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Eye Care Center')">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header">💪</div>
-                <div class="project-content">
-                    <h3>Physiotherapy Center</h3>
-                    <p>Physical therapy website with treatments, therapist profiles, and rehabilitation programs.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/healthcare-demo5')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Physiotherapy Center')">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header">🧘</div>
-                <div class="project-content">
-                    <h3>Wellness & Spa</h3>
-                    <p>Wellness center website with spa services, therapists, and wellness program listings.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/healthcare-demo6')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Wellness & Spa')">Buy</button>
-                    </div>
+
+<div class="watermark">Demo by Amith</div>
+
+<div class="container">
+
+    <!-- FIXED BACK BUTTON -->
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+    <h1>Healthcare Website Templates</h1>
+
+    <div class="projects-grid" id="projectsGrid"></div>
+
+</div>
+
+<!-- BUY MODAL -->
+<div id="buyModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeBuyModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+
+        <!-- PRICE (DYNAMIC) -->
+        <div id="priceBox" class="price-box" style="display:none;">
+            <div class="price" id="modalPrice"></div>
+        </div>
+
+        <p>Contact to buy:</p>
+        <p><b>amithboss555@gmail.com</b></p>
+    </div>
+</div>
+
+<script>
+/* =========================
+   EASY PROJECT SYSTEM
+   ========================= */
+
+const projects = [
+    {
+        icon: '🏥',
+        title: 'General Hospital',
+        description: 'Hospital website',
+        preview: 'https://example.com/demo1',
+        price: 800
+    },
+    {
+        icon: '👨‍⚕️',
+        title: 'Clinic & Diagnostics',
+        description: 'Clinic website',
+        preview: 'https://example.com/demo2'
+        // no price → hidden
+    },
+    {
+        icon: '🦷',
+        title: 'Dental Practice',
+        description: 'Dental site',
+        preview: 'https://example.com/demo3',
+        price: 500
+    }
+];
+
+/* =========================
+   RENDER PROJECTS
+   ========================= */
+
+const grid = document.getElementById('projectsGrid');
+
+projects.forEach(p => {
+    grid.innerHTML += `
+        <div class="project-card">
+            <div class="project-header">${p.icon}</div>
+            <div class="project-content">
+                <h3>${p.title}</h3>
+                <p>${p.description}</p>
+
+                <div class="button-group">
+                    <button class="btn btn-preview" onclick="openPreview('${p.preview}')">Preview</button>
+                    <button class="btn btn-buy" onclick="showBuyModal('${p.title}', ${p.price || null})">Buy</button>
                 </div>
             </div>
         </div>
-    </div>
+    `;
+});
 
-    <div id="buyModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeBuyModal()">&times;</span>
-            <h2 id="modalTitle">Product Name</h2>
-            <div class="price-box">
-                <div class="price">₹600</div>
-                <p>One-time payment for lifetime use</p>
-            </div>
-            <p>To purchase this template, please contact:</p>
-            <div class="email-box">
-                <div class="email-label">Email:</div>
-                <div class="email-text">amithboss555@gmail.com</div>
-            </div>
-            <p style="color: #94a3b8; font-size: 0.9rem; margin-top: 1rem;">After purchase, you'll receive the complete source code and full support.</p>
-            <button class="close-btn" onclick="closeBuyModal()">Close</button>
-        </div>
-    </div>
+/* =========================
+   FUNCTIONS
+   ========================= */
 
-    <script>
-        document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert('Right-click is disabled on this demo page.'); });
-        document.addEventListener('keydown', function(e) { if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) { e.preventDefault(); alert('Developer tools are disabled on this demo page.'); } });
-        const buyModal = document.getElementById('buyModal');
-        function showBuyModal(productName) { document.getElementById('modalTitle').textContent = productName; buyModal.style.display = 'block'; }
-        function closeBuyModal() { buyModal.style.display = 'none'; }
-        window.onclick = function(event) { if (event.target == buyModal) { buyModal.style.display = 'none'; } }
-        function openPreview(url) { alert('Opening preview in new tab...\n\nNote: Replace the URL with your actual preview link.'); window.open(url, '_blank'); }
-    </script>
+function openPreview(url) {
+    window.open(url, '_blank');
+}
+
+const modal = document.getElementById('buyModal');
+
+function showBuyModal(title, price) {
+    document.getElementById('modalTitle').innerText = title;
+
+    if (price) {
+        document.getElementById('priceBox').style.display = 'block';
+        document.getElementById('modalPrice').innerText = "₹" + price;
+    } else {
+        document.getElementById('priceBox').style.display = 'none';
+    }
+
+    modal.style.display = 'block';
+}
+
+function closeBuyModal() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(e) {
+    if (e.target == modal) closeBuyModal();
+};
+
+/* =========================
+   PROTECTION
+   ========================= */
+
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+</script>
+
 </body>
 </html>
