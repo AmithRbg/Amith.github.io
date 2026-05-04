@@ -10,6 +10,8 @@
         .watermark { position: fixed; bottom: 20px; right: 20px; background: rgba(59, 130, 246, 0.9); padding: 1rem 2rem; border-radius: 8px; font-weight: 700; z-index: 1000; pointer-events: none; animation: pulse 2s infinite; }
         @keyframes pulse { 0%, 100% { opacity: 0.8; } 50% { opacity: 1; } }
         .container { max-width: 1200px; margin: 0 auto; }
+        .back-btn { display: inline-block; margin-bottom: 2rem; padding: 0.8rem 1.5rem; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; transition: all 0.3s; }
+        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3); }
         h1 { text-align: center; margin-bottom: 3rem; color: #60a5fa; font-size: 2.5rem; }
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
         .project-card { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; overflow: hidden; transition: all 0.3s; }
@@ -38,88 +40,17 @@
         .email-text { color: #60a5fa; font-weight: 600; font-size: 1.1rem; }
         .close-btn { padding: 0.8rem 2rem; background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #60a5fa; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
         .close-btn:hover { background: rgba(59, 130, 246, 0.3); }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: #60a5fa; text-decoration: none; font-weight: 600; transition: all 0.3s; }
-        .back-link:hover { color: #3b82f6; text-decoration: underline; }
+        .price-display { display: none; }
+        .price-display.show { display: block; }
     </style>
 </head>
 <body>
     <div class="watermark">Demo by Amith</div>
     <div class="container">
-        <a href="javascript:history.back()" class="back-link">← Back to Portfolio</a>
+        <button class="back-btn" onclick="window.location.href='index.html'">← Back to Portfolio</button>
         <h1>Corporate Website Templates</h1>
         
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-header">🏢</div>
-                <div class="project-content">
-                    <h3>Modern Corporate</h3>
-                    <p>Sleek and professional corporate website with modern design, team showcase, and service listings. Perfect for established businesses.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/corporate-demo1')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Modern Corporate')">Buy</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">💼</div>
-                <div class="project-content">
-                    <h3>Enterprise Solutions</h3>
-                    <p>Large-scale enterprise website with portfolio, case studies, and client testimonials. Designed for Fortune 500 companies.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/corporate-demo2')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Enterprise Solutions')">Buy</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">🎯</div>
-                <div class="project-content">
-                    <h3>Startup Hub</h3>
-                    <p>Dynamic startup website with investor pitch, team bios, and product showcase. Great for early-stage companies.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/corporate-demo3')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Startup Hub')">Buy</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">🏛️</div>
-                <div class="project-content">
-                    <h3>Finance & Banking</h3>
-                    <p>Secure and trustworthy website for financial institutions with services, rates, and compliance information.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/corporate-demo4')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Finance & Banking')">Buy</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">🏭</div>
-                <div class="project-content">
-                    <h3>Industrial B2B</h3>
-                    <p>Manufacturing and industrial business website with product catalogs, technical specs, and quote requests.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/corporate-demo5')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Industrial B2B')">Buy</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">🌐</div>
-                <div class="project-content">
-                    <h3>Global Enterprises</h3>
-                    <p>Multilingual corporate website for international companies with global reach and local presence.</p>
-                    <div class="button-group">
-                        <button class="btn btn-preview" onclick="openPreview('https://example.com/corporate-demo6')">Preview</button>
-                        <button class="btn btn-buy" onclick="showBuyModal('Global Enterprises')">Buy</button>
-                    </div>
-                </div>
-            </div>
+        <div class="projects-grid" id="projectsContainer">
         </div>
     </div>
 
@@ -127,8 +58,8 @@
         <div class="modal-content">
             <span class="close" onclick="closeBuyModal()">&times;</span>
             <h2 id="modalTitle">Product Name</h2>
-            <div class="price-box">
-                <div class="price">₹600</div>
+            <div id="priceSection" class="price-box price-display">
+                <div class="price" id="modalPrice">₹600</div>
                 <p>One-time payment for lifetime use</p>
             </div>
             <p>To purchase this template, please contact:</p>
@@ -142,13 +73,111 @@
     </div>
 
     <script>
-        document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert('Right-click is disabled on this demo page.'); });
-        document.addEventListener('keydown', function(e) { if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) { e.preventDefault(); alert('Developer tools are disabled on this demo page.'); } });
+        const projects = [
+            {
+                icon: '🏢',
+                title: 'Modern Corporate',
+                description: 'Sleek and professional corporate website with modern design, team showcase, and service listings. Perfect for established businesses.',
+                price: 600
+            },
+            {
+                icon: '💼',
+                title: 'Enterprise Solutions',
+                description: 'Large-scale enterprise website with portfolio, case studies, and client testimonials. Designed for Fortune 500 companies.',
+                price: 600
+            },
+            {
+                icon: '🎯',
+                title: 'Startup Hub',
+                description: 'Dynamic startup website with investor pitch, team bios, and product showcase. Great for early-stage companies.',
+                price: 600
+            },
+            {
+                icon: '🏛️',
+                title: 'Finance & Banking',
+                description: 'Secure and trustworthy website for financial institutions with services, rates, and compliance information.',
+                price: 600
+            },
+            {
+                icon: '🏭',
+                title: 'Industrial B2B',
+                description: 'Manufacturing and industrial business website with product catalogs, technical specs, and quote requests.',
+                price: 600
+            },
+            {
+                icon: '🌐',
+                title: 'Global Enterprises',
+                description: 'Multilingual corporate website for international companies with global reach and local presence.',
+                price: 600
+            }
+        ];
+
+        function renderProjects() {
+            const container = document.getElementById('projectsContainer');
+            container.innerHTML = '';
+
+            projects.forEach(project => {
+                const card = document.createElement('div');
+                card.className = 'project-card';
+                card.innerHTML = `
+                    <div class="project-header">${project.icon}</div>
+                    <div class="project-content">
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                        <div class="button-group">
+                            <button class="btn btn-preview" onclick="openPreview('${project.title}')">Preview</button>
+                            <button class="btn btn-buy" onclick="showBuyModal('${project.title}', ${project.price || null})">Buy</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('Right-click is disabled on this demo page.');
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+                alert('Developer tools are disabled on this demo page.');
+            }
+        });
+
         const buyModal = document.getElementById('buyModal');
-        function showBuyModal(productName) { document.getElementById('modalTitle').textContent = productName; buyModal.style.display = 'block'; }
-        function closeBuyModal() { buyModal.style.display = 'none'; }
-        window.onclick = function(event) { if (event.target == buyModal) { buyModal.style.display = 'none'; } }
-        function openPreview(url) { alert('Opening preview in new tab...\n\nNote: Replace the URL with your actual preview link.'); window.open(url, '_blank'); }
+        const priceSection = document.getElementById('priceSection');
+
+        function showBuyModal(productName, price) {
+            document.getElementById('modalTitle').textContent = productName;
+            
+            if (price) {
+                document.getElementById('modalPrice').textContent = '₹' + price;
+                priceSection.classList.add('show');
+            } else {
+                priceSection.classList.remove('show');
+            }
+            
+            buyModal.style.display = 'block';
+        }
+
+        function closeBuyModal() {
+            buyModal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == buyModal) {
+                buyModal.style.display = 'none';
+            }
+        }
+
+        function openPreview(productName) {
+            alert(`Opening ${productName} preview in new tab...`);
+            window.open('https://example.com/preview', '_blank');
+        }
+
+        window.addEventListener('load', renderProjects);
     </script>
 </body>
 </html>
